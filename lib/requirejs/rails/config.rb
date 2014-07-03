@@ -63,6 +63,7 @@ module Requirejs::Rails
         include
         inlineText
         locale
+        loglevel
         mainConfigFile
         map
         modules

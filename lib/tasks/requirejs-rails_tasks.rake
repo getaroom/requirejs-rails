@@ -111,7 +111,7 @@ OS X Homebrew users can use 'brew install node'.
       requirejs.config.target_dir.mkpath
       requirejs.config.driver_path.dirname.mkpath
 
-      result = `node "#{requirejs.config.driver_path}"`
+      result = system %{node "#{requirejs.config.driver_path}"}
       unless $?.success?
         raise RuntimeError, "Asset compilation with node failed with error:\n\n#{result}\n"
       end
