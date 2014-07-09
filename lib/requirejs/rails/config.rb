@@ -36,6 +36,7 @@ module Requirejs::Rails
         config
         context
         deps
+        hgn
         jQuery
         locale
         map
@@ -60,6 +61,7 @@ module Requirejs::Rails
         findNestedDependencies
         has
         hasOnSave
+        hgn
         include
         inlineText
         locale
