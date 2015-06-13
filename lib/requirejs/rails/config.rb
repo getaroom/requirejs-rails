@@ -24,8 +24,8 @@ module Requirejs::Rails
 
       self.loader = :requirejs
 
-      self.driver_template_path = Pathname.new(__FILE__+'/../rjs_driver.js.erb').cleanpath
-      self.driver_path = self.tmp_dir.join("requirejs/rjs_driver.js")
+      self.driver_template_path = Pathname.new(__FILE__+'/../rjs_build.js.erb').cleanpath
+      self.driver_path = self.tmp_dir.join("requirejs/rjs_build.js")
 
       self.user_config = {}
 
@@ -65,7 +65,7 @@ module Requirejs::Rails
         include
         inlineText
         locale
-        loglevel
+        logLevel
         mainConfigFile
         map
         modules
@@ -84,6 +84,7 @@ module Requirejs::Rails
         pragmasOnSave
         preserveLicenseComments
         shim
+        skipDirOptimize
         skipModuleInsertion
         skipPragmas
         uglify
