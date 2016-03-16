@@ -4,10 +4,8 @@ cdn_pattern = Regexp.new("\\Ahttps?://")
 modifiedHash = build_config
 pathsHash = modifiedHash["paths"]
 modifiedHash["dir"] = build_dir.to_s
-modifiedHash["paths"] = Hash[pathsHash.select do |_, v|
-    !v.is_a?(Array)
-  end.map do |k, v|
-    [k, if !cdn_pattern.match(v) then v else "empty:" end]
+modifiedHash["paths"] = Hash[pathsHash.map do |k, v|
+    [k, v.is_a?(Array) ? 'empty:' : !cdn_pattern.match(v) ? v : "empty:" ]
   end
 ] if !pathsHash.nil?
 
